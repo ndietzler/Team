@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="SocialIce">
+<html lang="en" ng-app="SocialIce" ng-controller="signupCtrl">
 	<head>
 		<meta author="Isabella Spaletta">
 		<meta charset="UTF-8">
@@ -50,8 +50,8 @@
 			    <input type="text" class="form-control" id="password" ng-model="password">
 		  	</div>
 		  		<label for="confirmation">Confirm Password</label>
-			    <input type="text" class="form-control" id="confirm" ng-model="passwordConfirm">
-			    <p ng-if="checkMatch()">Passwords do not match.</p>
+			    <input type="text" class="form-control" id="confirm" ng-keyUp="checkMatch()" ng-model="passwordConfirm">
+			    <p>Passwords do not match.</p>
 		  	</div>
 		    </br>
 		</form>
