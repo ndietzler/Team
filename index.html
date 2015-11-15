@@ -38,9 +38,8 @@
 
 		    <div class="form-group" ng-class="{'has-error' : socialForm.lastName.$invalid}">
 			    <label for="lastName">Last Name</label>
-			    <input type="text" class="form-control" name="lastName" id="lastName" placeholder="Last Name" required />
-			    <p ng-show="!socialForm.lastName.$pristine && socialForm.lastName.$invalid" class="help-block">Must enter a name</p>
-
+			    <input type="text" class="form-control" name="lastName" id="lastName" ng-model="lastName"placeholder="Last Name" required />
+			    <p ng-show="!socialForm.lastName.$pristine && socialForm.lastName.$invalid">Birthdate is required</p>
 			</div>
 
 		  	<div class="form-group" ng-class="{'has-error' : socialForm.birthdate.$invalid}">
