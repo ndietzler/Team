@@ -6,7 +6,7 @@ angular.module('SocialIce', [])
 		var d = Date.parse($scope.birthdate);
 		console.log(d)
 
-}];
+}]);
 
 		$scope.checkMatch = function() {
 			console.log("hello");
