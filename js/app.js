@@ -6,18 +6,22 @@ angular.module('SocialIce', [])
 		var d = Date.parse($scope.birthdate);
 		console.log(d)
 
+<<<<<<< HEAD
 }]);
 
+=======
+>>>>>>> 33748cb13068d35a2bd95efef5a5db07a5eb03f1
 		$scope.checkMatch = function() {
-			console.log("hello");
-			// if (password == passwordConfirm) {
-			// 	console.log("true");
-			// 	return true;
-			// } else {
-			// 	console.log("false");
-			// 	return false;
-			// }
+		console.log("hello");
+		// if (password == passwordConfirm) {
+		// 	console.log("true");
+		// 	return true;
+		// } else {
+		// 	console.log("false");
+		// 	return false;
+		// }
 		}
 
 }]);
+
 
