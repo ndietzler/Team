@@ -42,6 +42,16 @@
 			    <label for="birthDateValidation">Birthdate</label>
 			    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="mm/dd/yyyy">
 		  	</div>
+
+		  	<div class="form-group">
+		  		<label for="password">Password</label>
+			    <input type="text" class="form-control" id="password" ng-model="password">
+		  	</div>
+		  		<label for="confirmation">Confirm Password</label>
+			    <input type="text" class="form-control" id="confirm" ng-model="passwordConfirm">
+			    <p ng-if="checkMatch()">Passwords do not match.</p>
+		  	</div>
+		    </br>
 		</form>
 
 		<div class="container">
