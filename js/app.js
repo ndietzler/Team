@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('SocialIce', ['ui.bootsrap'])
+angular.module('SocialIce', [])
 	.controller('signupCtrl'), ['$scope', function($scope){
 
-	}];
+}];
