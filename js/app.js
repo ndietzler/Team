@@ -6,10 +6,13 @@ angular.module('SocialIce', [])
 		$scope.date = function() {
 			var d = Date.parse($scope.birthdate);
 			if (!isNaN(d)) {
-				var newD = Date(d)
-				console.log(newD)
+				var newD = new Date(d)
+				if (Date.now() - d >= 410240038000 ) {
+					return true;
+				} else {
+					return false;
+				}
 			}
-			//console.log(d)
 		}
 
 		$scope.checkMatch = function() {
@@ -18,6 +21,15 @@ angular.module('SocialIce', [])
 			} else {
 				return false;
 			}
+		}
+
+		$scope.reset = function() {
+			$scope.email = "";
+			$scope.firstName = "";
+			$scope.lastName = "";
+			$scope.birthdate = "";
+			$scope.password = "";
+			$scope.passwordConfirm = "";
 		}
 
 }]);
