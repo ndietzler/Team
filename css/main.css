@@ -2,6 +2,6 @@
 @import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css");
 
 body {
-	background-image: "../img/arctic.jpeg";
+	background-image: url("../img/arctic.jpeg");
 	background-repeat: no-repeat;
 }
