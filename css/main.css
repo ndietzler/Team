@@ -4,4 +4,6 @@
 body {
 	background-image: url("../img/arctic.jpeg");
 	background-repeat: no-repeat;
+	background-size: cover;
+    background-position: center center; 
 }

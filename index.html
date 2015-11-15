@@ -21,7 +21,6 @@
 		<h4>This website is a safe place for penguins to connect with one another! You must be at least 13 years old.</h4>
 
 		<form name="socialForm" ng-submit="submitForm()" novalidate>
-
 			<div class="form-group" ng-class="{'has-error': socialForm.email.$invalid}">
         		<label for="email">Email:</label>
         		<input type="email" name="email" id="email" class="form-control" ng-model="email" required>
@@ -60,9 +59,9 @@
 			    <p ng-if="password.length > 0 && passwordConfirm.length > 0 && !checkMatch()">Passwords do not match.</p>
 		  	</div>
 		    </br>
-
 		</form>
-
+		
+		</div>
 		<div class="container">
 			<button class="btn" ng-click="">Reset</button>
 			<button class="btn btn-primary" ng-click="">Sign Me Up!</button>
