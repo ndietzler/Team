@@ -24,7 +24,8 @@
 
 			<div class="form-group" ng-class="{'has-error': socialForm.email.$invalid}">
         		<label for="email">Email:</label>
-        		<input type="email" name="email" id="email" class="form-control" ng-model="email">
+        		<input type="email" name="email" id="email" class="form-control" ng-model="email" required>
+        		<p ng-show="!socialForm.email.$pristine && socialForm.email.$invalid">This is not a valid email address</p>
       		</div>
       		
 			<div class="form-group">
