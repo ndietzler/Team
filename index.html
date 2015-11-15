@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="DawgCoffeeApp">
+<html lang="en" ng-app="SocialIce">
 	<head>
 		<meta author="Isabella Spaletta">
 		<meta charset="UTF-8">
@@ -21,18 +21,17 @@
 		<h4>This website is a safe place for penguins to connect with one another! You must be at least 13 years old.</h4>
 
 		<form name="socialForm" novalidate>
+
 			<div class="form-group" ng-class="{'has-error': socialForm.email.$invalid}">
         		<label for="email">Email:</label>
         		<input type="email" name="email" id="email" class="form-control" ng-model="email">
       		</div>
 			<div class="form-group">
-			    <label for="formGroupExampleInput">Example label</label>
-			    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input">
+
+		  	<div class="form-group">
+			    <label for="birthDateValidation">Birthdate</label>
+			    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="mm/dd/yyyy">
 		  	</div>
-		    <div class="form-group">
-			    <label for="formGroupExampleInput2">Another label</label>
-			    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input">
-		  </div>
 		</form>
 
 		<div class="container">
