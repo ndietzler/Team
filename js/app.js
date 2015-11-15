@@ -5,7 +5,7 @@ angular.module('SocialIce', [])
 
 		$scope.date = function() {
 			var d = Date.parse($scope.birthdate);
-			if (isNaN(d)) {
+			if (!isNaN(d)) {
 				var newD = Date(d)
 				console.log(newD)
 			}
