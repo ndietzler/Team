@@ -25,7 +25,10 @@
 			<div class="form-group" ng-class="{'has-error': socialForm.email.$invalid}">
         		<label for="email">Email:</label>
         		<input type="email" name="email" id="email" class="form-control" ng-model="email" required>
-        		<p ng-show="!socialForm.email.$pristine && socialForm.email.$invalid">This is not a valid email address</p>
+        		<div ng-show="socialForm.$submitted || socialForm.email.$touched">
+      				<span ng-show="socialForm.email.$error.required">Tell us your email address.</span>
+      				<span ng-show="socialForm.email.$error.email">This is not a valid email address.</span>
+    			</div>
       		</div>
 
 			<div class="form-group">
