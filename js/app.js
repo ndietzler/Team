@@ -8,10 +8,8 @@ angular.module('SocialIce', [])
 			if (!isNaN(d)) {
 				var newD = new Date(d)
 				if (Date.now() - d >= 410240038000 ) {
-					console.log("is of age");
 					return true;
 				} else {
-					console.log("is not of age");
 					return false;
 				}
 			}
@@ -23,6 +21,15 @@ angular.module('SocialIce', [])
 			} else {
 				return false;
 			}
+		}
+
+		$scope.reset = function() {
+			$scope.email = "";
+			$scope.firstName = "";
+			$scope.lastName = "";
+			$scope.birthdate = "";
+			$scope.password = "";
+			$scope.passwordConfirm = "";
 		}
 
 }]);
