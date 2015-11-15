@@ -1,1 +1,1 @@
-corn
+'use strict';
