@@ -22,9 +22,9 @@
 
 		<form name="socialForm" ng-submit="submitForm()" novalidate>
 
-			<div class="form-group" ng-class="{'has-error' : socialForm.email.$invalid}">
+			<div class="form-group" ng-class="{'has-error': socialForm.email.$invalid}">
         		<label for="email">Email:</label>
-        		<input type="email" name="email" id="email" class="form-control" ng-model="email" placeholder="Email" required>
+        		<input type="email" name="email" id="email" class="form-control" ng-model="email" required>
         		<div ng-show="socialForm.$submitted || socialForm.email.$touched">
       				<span ng-show="socialForm.email.$error.required">Tell us your email address.</span>
       				<span ng-show="socialForm.email.$error.email">This is not a valid email address.</span>
@@ -38,8 +38,10 @@
 
 		    <div class="form-group" ng-class="{'has-error' : socialForm.lastName.$invalid}">
 			    <label for="lastName">Last Name</label>
-			    <input type="text" class="form-control" name="lastName" id="lastName" ng-model="lastName"placeholder="Last Name" required />
-			    <p ng-show="!socialForm.lastName.$pristine && socialForm.lastName.$invalid">Birthdate is required</p>
+			    <input type="text" class="form-control" name="lastName" id="lastName" placeholder="Last Name" ng-model="lastName" required />
+			    <div ng-show="socialForm.$submitted || socialForm.lastName.$touched">
+			    	<div ng-show="socialForm.lastName.$error.required">Tell us your name.</div>
+			    </div>
 			</div>
 
 		  	<div class="form-group" ng-class="{'has-error' : socialForm.birthdate.$invalid}">
