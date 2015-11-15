@@ -38,13 +38,14 @@
 
 		    <div class="form-group" ng-class="{'has-error' : socialForm.lastName.$invalid}">
 			    <label for="lastName">Last Name</label>
-			    <input type="text" class="form-control" name="lastName" id="lastName" placeholder="Last Name" required />
+			    <input type="text" class="form-control" name="lastName" id="lastName" placeholder="Last Name" ng-model="lastName" required />
 			    <p ng-show="!socialForm.lastName.$pristine && socialForm.lastName.$invalid">we need to know your last name</p>
 			</div>
 
-		  	<div class="form-group">
+		  	<div class="form-group" ng-class="{'has-error' : socialForm.birthdate.$invalid}">
 			    <label for="birthDateValidation">Birthdate</label>
-			    <input type="text" id="birthdate" class="form-control" placeholder="mm/dd/yyyy" ng-model="birthdate" required>
+			    <input type="text" class="form-control" placeholder="mm/dd/yyyy" ng-model="birthdate" ng-keyUp="date()" required>
+			    <p ng-show="!socialForm.birthdate.$pristine && socialForm.birthdate.$invalid">Birthdate is required</p>
 		  	</div>
 
 		  	<div class="form-group">
