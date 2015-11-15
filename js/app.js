@@ -6,10 +6,15 @@ angular.module('SocialIce', [])
 		$scope.date = function() {
 			var d = Date.parse($scope.birthdate);
 			if (!isNaN(d)) {
-				var newD = Date(d)
-				console.log(newD)
+				var newD = new Date(d)
+				if (Date.now() - d >= 410240038000 ) {
+					console.log("is of age");
+					return true;
+				} else {
+					console.log("is not of age");
+					return false;
+				}
 			}
-			//console.log(d)
 		}
 
 		$scope.checkMatch = function() {

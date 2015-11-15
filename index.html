@@ -43,10 +43,10 @@
 
 			</div>
 
-		  	<div class="form-group" ng-class="{'has-error' : socialForm.birthdate.$invalid}">
+		  	<div class="form-group" ng-class="{'has-error' : !date()}">
 			    <label for="birthDateValidation">Birthdate</label>
 			    <input type="text" class="form-control" placeholder="mm/dd/yyyy" ng-model="birthdate" ng-keyUp="date()" required>
-			    <p ng-show="!socialForm.birthdate.$pristine && socialForm.birthdate.$invalid">Birthdate is required</p>
+			    <p ng-show="birthdate != null && !date()">Must be 13 years or older</p>
 		  	</div>
 
 		  	<div class="form-group" ng-class="{'has-error': password == null}">
