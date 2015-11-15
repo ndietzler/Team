@@ -48,13 +48,14 @@
 			    <p ng-show="!socialForm.birthdate.$pristine && socialForm.birthdate.$invalid">Birthdate is required</p>
 		  	</div>
 
-		  	<div class="form-group">
+		  	<div class="form-group" ng-class="{'has-error': password == null}">
 		  		<label for="password">Password</label>
-			    <input type="text" class="form-control" id="password" ng-model="password">
+			    <input type="text" class="form-control" ng-model="password" required>
 		  	</div>
+		  	<div class="form-group" ng-class="{'has-error': !checkMatch()}">
 		  		<label for="confirmation">Confirm Password</label>
-			    <input type="text" class="form-control" id="confirm" ng-keyUp="checkMatch()" ng-model="passwordConfirm">
-			    <p>Passwords do not match.</p>
+			    <input type="text" class="form-control" ng-keyUp="checkMatch()" ng-model="passwordConfirm" required>
+			    <p ng-if="password.length > 0 && passwordConfirm.length > 0 && !checkMatch()">Passwords do not match.</p>
 		  	</div>
 		    </br>
 
