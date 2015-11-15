@@ -7,14 +7,11 @@ angular.module('SocialIce', [])
 		console.log(d)
 
 		$scope.checkMatch = function() {
-		console.log("hello");
-		// if (password == passwordConfirm) {
-		// 	console.log("true");
-		// 	return true;
-		// } else {
-		// 	console.log("false");
-		// 	return false;
-		// }
+			if ($scope.password != null && $scope.passwordConfirm != null && $scope.password === $scope.passwordConfirm) {
+				return true;
+			} else {
+				return false;
+			}
 		}
 
 }]);
