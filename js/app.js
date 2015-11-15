@@ -3,8 +3,14 @@
 angular.module('SocialIce', [])
 	.controller('signupCtrl', ['$scope', function($scope) {
 
-		var d = Date.parse($scope.birthdate);
-		console.log(d)
+		$scope.date = function() {
+			var d = Date.parse($scope.birthdate);
+			if (isNaN(d)) {
+				var newD = Date(d)
+				console.log(newD)
+			}
+			//console.log(d)
+		}
 
 		$scope.checkMatch = function() {
 			if ($scope.password != null && $scope.passwordConfirm != null && $scope.password === $scope.passwordConfirm) {
