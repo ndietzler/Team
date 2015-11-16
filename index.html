@@ -39,7 +39,7 @@
 			    <label for="lastName">Last Name</label>
 			    <input type="text" class="form-control" name="lastName" id="lastName" placeholder="Last Name" ng-model="information.lastName" required />
 			    <div ng-show="socialForm.$submitted || socialForm.lastName.$touched">
-			    	<div ng-show="socialForm.lastName.$error.required">Please enter your last name.</div>
+			    	<div id="invalidName" ng-show="socialForm.lastName.$error.required">Please enter your last name.</div>
 			    </div>
 			</div>
 

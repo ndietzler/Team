@@ -1,6 +1,27 @@
 'use strict';
 
 describe('Social Ice sign up page', function() {
+	
+	it('should display error message if user touches and leaves last name empty', function() {
+		browser.get('http://localhost:8000');
+
+		var lastNameForm = element(by.model('lastName'));
+		var invalidName = element(by.id("invalidName"));
+		var emailSection = element(by.model('email'));
+		lastNameForm.click();
+		emailSection.click();
+		expect(invalidName.isDisplayed()).toEqual(true);
+	})
+
+	it('should not display error given valid last name', function(){
+		browser.get('http://localhost:8000');
+
+		var lastNameForm = element(by.model('lastName'));
+		var invalidName = element(by.id("invalidName"));
+		lastNameForm.sendKeys('ggame');
+		expect(invalidName.isDisplayed()).toEqual(false);
+	})
+
 	it('should display error needing an email when clicked and then clicked somewhere else', function(){
 		browser.get('http://localhost:8000');
 
@@ -114,5 +135,4 @@ describe('Social Ice sign up page', function() {
 
 
     });
-
 })
