@@ -186,5 +186,21 @@ describe('Social Ice sign up page', function() {
 
   });
 
+  it('should test the all fields are empty once the reset button has been pushed', function(){
+
+    browser.get('http://localhost:8000');
+
+    element(by.id('reset')).click();
+
+    var password1 = element(by.model('information.password'));
+    var password2 = element(by.model('information.passwordConfirm'));
+    var lastname = element(by.model('information.lastName'));
+    var email = element(by.model('information.email'));
+    var birthdate = element(by.model('information.birthdate'));
+
+    expect( password1.getText() && password2.getText() && lastname.getText() && email.getText() && birthdate.getText() ).toEqual('');
+
+  });
+
 
 })
