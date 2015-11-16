@@ -24,7 +24,7 @@ angular.module('SocialIce', [])
 		}
 
 		$scope.reset = function() {
-			$scope.email = $scope.email.$setUntouched();
+			$scope.email = "";
 			$scope.firstName = "";
 			$scope.lastName = "";
 			$scope.birthdate = "";
