@@ -3,6 +3,11 @@
 angular.module('SocialIce', [])
 	.controller('signupCtrl', ['$scope', function($scope) {
 
+		$scope.information = {};
+
+		$scope.submitClick = false;
+
+
 		$scope.date = function() {
 			var d = Date.parse($scope.birthdate);
 			if (!isNaN(d)) {
@@ -30,7 +35,8 @@ angular.module('SocialIce', [])
 			// $scope.birthdate = "";
 			// $scope.password = "";
 			// $scope.passwordConfirm = "";
-			window.location.reload(false);
+			$scope.socialForm.lastName.$setUntouched();
+			//window.location.reload(false);
 		}
 
 }]);
