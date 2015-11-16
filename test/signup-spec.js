@@ -2,53 +2,32 @@
 
 describe('Social Ice sign up page', function() {
 
-	it('Check if the user entered text into birthdate function', function() {
+	it('Check if the user entered a valid birthdate (they are 13 years old) and the message does not appear', function() {
 		browser.get('http://localhost:8000');
 
 		var text = element(by.model('birthdate'))
-		text.sendKeys("1")
+		text.sendKeys("11/16/2000")
 
-		expect(text != null).toEqual(true)
+		expect( element(by.id('birthDate')).isDisplayed()).toEqual(false)
 
 	})
 
-	it('Check if birthdate entered is valid', function() {
+	it('Check if the user did not enter a valid birthdate (the user is not 13 years old) and the appropriate message appears', function() {
 		browser.get('http://localhost:8000');
 
-		
+		var text = element(by.model('birthdate'))
+		text.sendKeys("11/16/2004")
+
+		expect( element(by.id('birthDate')).isDisplayed()).toEqual(true)		
 	})
 
-//     //this is a test
-//     it('should have the right title', function(){
-//         browser.get('http://localhost:8000');
+	it('Check if the user entered an invalid birthdate (a letter) and the appropriate message appears', function() {
+		browser.get('http://localhost:8000');
 
-//         //browser.getTitle(); //do nothing with yet
+		var text = element(by.model('birthdate'))
+		text.sendKeys("a")
 
-//         expect( browser.getTitle() ).toEqual('Watch List');
-
-//         browser.getTitle().then(function(response){
-//             console.log(response);
-//         });
-
-//     });
-
-//     //another test!
-//     it('it should open a modal search window', function(){
-//       browser.get('http://localhost:8000/#/watchlist');
-
-//       var searchBar = element(by.model('searchQuery'));
-//       searchBar.sendKeys('shawshank');
-
-//       browser.pause();
-
-//       var button = element(by.id('searchButton'));
-//       button.click();
-
-//       var modalBody = element(by.css('.modal-body'));
-//       expect( modalBody.isPresent() ).toEqual(true);
-
-
-
-//     });
+		expect( element(by.id('birthDate')).isDisplayed()).toEqual(true)		
+	})
 
 })
