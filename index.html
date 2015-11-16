@@ -20,7 +20,7 @@
 		<h1>Sign Up for Social Ice!</h1>
 		<h4>This website is a safe place for penguins to connect with one another! You must be at least 13 years old.</h4>
 
-		<form name="socialForm" ng-submit="submitForm()" novalidate>
+		<form name="socialForm" ng-model="socialForm" ng-submit="submitForm()" novalidate>
 			<div class="form-group" ng-class="{'has-error': socialForm.email.$invalid}">
         		<label for="email">Email:</label>
         		<input type="email" name="email" id="email" class="form-control" ng-model="email" required>

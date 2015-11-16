@@ -36,3 +36,19 @@
 //     });
 
 // })
+
+describe('Email', function(){
+	it('should throw first error when clicked and then clicked somewhere else', function(){
+		browser.get('http://localhost:8000');
+
+		var emailSection = element(by.model('email'));
+		emailSection.click();
+		var firstName = element(by.model('firstName'));
+		firstName.click();
+		expect(emailSection, 'ng-invalid').toEqual(true);
+		
+
+
+	})
+
+})
