@@ -31,7 +31,6 @@ describe('Social Ice sign up page', function() {
 		var invalidEmailMessage = element(by.id('notValid'));
 		emailSection.sendKeys("example@example.com");
 		var firstName = element(by.model('firstName'));
-		browser.pause();
 		firstName.click();
 		expect(needEmailMessage.isDisplayed()).toEqual(false);
 		expect(invalidEmailMessage.isDisplayed()).toEqual(false);
