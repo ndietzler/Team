@@ -36,3 +36,22 @@
 //     });
 
 // })
+describe('User Name input', function(){
+	var input = element(by.model('lastName'));
+
+	beforeEach(){
+		browser.get('http://localhost:8000');
+	});
+
+	it('should alert user if the form contains an invalid last name', function() {
+		input.sendKeys('pantalones');
+		input.clear();
+		expect(socialForm.lastName.$touched.toEqual(true);
+		expect(socialForm.lastName.$error.required.toEqual(true);
+	});
+
+	it('should consider all input as valid', function(){
+		input.sendKeys('cardwars');
+		expect(socialForm.lastName.$error.required.toEqual(false));
+	}
+})
