@@ -20,7 +20,7 @@
 		<h1>Sign Up for Social Ice!</h1>
 		<h4>This website is a safe place for penguins to connect with one another! You must be at least 13 years old.</h4>
 
-		<div class="alert alert-success" ng-show="submitClick">
+		<div class="alert alert-success" id="popup" ng-show="submitClick">
 	  		<strong>Success! You have created an account!</strong> 
 		</div>
 
@@ -70,7 +70,7 @@
 		</div>
 		<div class="container">
 			<button class="btn" ng-click="reset()">Reset</button>
-			<button class="btn btn-primary" ng-disabled="socialForm.$invalid" ng-click="submitClick = true">Sign Me Up!</button>
+			<button class="btn btn-primary" ng-disabled="socialForm.$invalid" id="submit" ng-click="submitClick = true">Sign Me Up!</button>
 		</div>
 
 		<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-sanitize.js"></script>

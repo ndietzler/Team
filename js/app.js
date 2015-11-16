@@ -5,10 +5,7 @@ angular.module('SocialIce', [])
 		
 		$scope.information = {};
 
-		$scope.information = {};
-
 		$scope.submitClick = false;
-
 
 		$scope.date = function() {
 			var d = Date.parse($scope.information.birthdate);
