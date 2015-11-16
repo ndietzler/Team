@@ -56,7 +56,7 @@
 		  	<div class="form-group" ng-class="{'has-error': !checkMatch()}">
 		  		<label for="confirmation">Confirm Password</label>
 			    <input type="password" class="form-control" ng-keyUp="checkMatch()" ng-model="passwordConfirm" required>
-			    <p ng-if="password.length > 0 && passwordConfirm.length > 0 && !checkMatch()">Passwords do not match.</p>
+			    <p id="passwordError" ng-if="password.length > 0 && passwordConfirm.length > 0 && !checkMatch()">Passwords do not match.</p>
 		  	</div>
 
 		    <br>

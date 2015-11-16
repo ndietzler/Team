@@ -90,17 +90,14 @@ describe('Social Ice sign up page', function() {
 
     });
 
-    it('should test that the password and the confirmation do not match', function(){
+    it('should test that error message appears when the password and the confirmation do not match', function(){
 
       browser.get('http://localhost:8000');
 
-      var element1 = element(by.model('password'));
-      var element2 = element(by.model('passwordConfirm'));
+      var element1 = element(by.model('password')).sendKeys('a');
+      var element2 = element(by.model('passwordConfirm')).sendKeys('b');
 
-      element1.sendKeys('a');
-      element2.sendKeys('b');
-
-      expect( element1.getText() !== element2.getText() ).toEqual(true);
+      expect( element(by.id('passwordError')).isDisplayed() ).toEqual(true);
 
     });
 
