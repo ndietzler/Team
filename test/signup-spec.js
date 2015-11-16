@@ -178,4 +178,13 @@ describe('Social Ice sign up page', function() {
 
   });
 
+  it('should test the submit button is disabled when the form is invalid', function(){
+
+    browser.get('http://localhost:8000');
+
+    expect( element(by.id('submit')).isEnabled() ).toEqual(false);
+
+  });
+
+
 })
