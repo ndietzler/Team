@@ -30,4 +30,54 @@ describe('Social Ice sign up page', function() {
 		expect( element(by.id('birthDate')).isDisplayed()).toEqual(true)		
 	})
 
+    it('should test that the user has entered text into both fields', function(){
+
+      browser.get('http://localhost:8000');
+
+      var element1 = element(by.model('password'));
+      var element2 = element(by.model('passwordConfirm'));
+      
+      element1.sendKeys('a');
+      element2.sendKeys('a');
+
+      expect( element1.getText() != null && element2.getText() != null ).toEqual(true);
+
+    });
+
+    it('should test that the user has NOT entered text into both fields', function(){
+
+      browser.get('http://localhost:8000');
+
+      var element1 = element(by.model('password'));
+      var element2 = element(by.model('passwordConfirm'));
+
+      expect( element1.getText() && element2.getText() ).toEqual('');
+
+    });
+
+    it('should test that the password and the confirmation that the user entered match', function(){
+
+      browser.get('http://localhost:8000');
+
+      var element1 = element(by.model('password'));
+      var element2 = element(by.model('passwordConfirm'));
+
+      element1.sendKeys('a');
+      element2.sendKeys('a');
+
+      expect( element1.getText() ).toEqual( element2.getText() );
+
+    });
+
+    it('should test that error message appears when the password and the confirmation do not match', function(){
+
+      browser.get('http://localhost:8000');
+
+      var element1 = element(by.model('password')).sendKeys('a');
+      var element2 = element(by.model('passwordConfirm')).sendKeys('b');
+
+      expect( element(by.id('passwordError')).isDisplayed() ).toEqual(true);
+
+    });
+
 })
