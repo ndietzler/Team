@@ -2,6 +2,8 @@
 
 angular.module('SocialIce', [])
 	.controller('signupCtrl', ['$scope', function($scope) {
+		
+		$scope.information = {};
 
 		$scope.information = {};
 
@@ -9,7 +11,7 @@ angular.module('SocialIce', [])
 
 
 		$scope.date = function() {
-			var d = Date.parse($scope.birthdate);
+			var d = Date.parse($scope.information.birthdate);
 			if (!isNaN(d)) {
 				var newD = new Date(d)
 				if (Date.now() - d >= 410240038000 ) {
@@ -21,7 +23,7 @@ angular.module('SocialIce', [])
 		}
 
 		$scope.checkMatch = function() {
-			if ($scope.password != null && $scope.passwordConfirm != null && $scope.password === $scope.passwordConfirm) {
+			if ($scope.information.password != null && $scope.information.passwordConfirm != null && $scope.information.password === $scope.information.passwordConfirm) {
 				return true;
 			} else {
 				return false;
@@ -29,14 +31,10 @@ angular.module('SocialIce', [])
 		}
 
 		$scope.reset = function() {
-			// $scope.email = "";
-			// $scope.firstName = "";
-			// $scope.lastName = "";
-			// $scope.birthdate = "";
-			// $scope.password = "";
-			// $scope.passwordConfirm = "";
+			$scope.information = {};
+			$scope.information.email = "";
+			$scope.socialForm.email.$setUntouched();
 			$scope.socialForm.lastName.$setUntouched();
-			//window.location.reload(false);
 		}
 
 }]);
