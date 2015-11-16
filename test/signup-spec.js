@@ -1,6 +1,40 @@
 'use strict';
 
 describe('Social Ice sign up page', function() {
+	it('should display error needing an email when clicked and then clicked somewhere else', function(){
+		browser.get('http://localhost:8000');
+
+		var emailSection = element(by.model('email'));
+		var needEmailMessage = element(by.id('needEmail'));
+		emailSection.click();
+		var firstName = element(by.model('firstName'));
+		firstName.click();
+		expect(needEmailMessage.isDisplayed()).toEqual(true);
+	})
+
+	it('should display invalid error when invalid email is given', function(){
+		browser.get('http://localhost:8000');
+
+		var emailSection = element(by.model('email'));
+		var invalidEmailMessage = element(by.id('notValid'));
+		emailSection.sendKeys("myName");
+		var firstName = element(by.model('firstName'));
+		firstName.click();
+		expect(invalidEmailMessage.isDisplayed()).toEqual(true);
+	})
+
+	it('should not display an error message when valid email is entered', function(){
+		browser.get('http://localhost:8000');
+
+		var emailSection = element(by.model('email'));
+		var needEmailMessage = element(by.id('needEmail'));
+		var invalidEmailMessage = element(by.id('notValid'));
+		emailSection.sendKeys("example@example.com");
+		var firstName = element(by.model('firstName'));
+		firstName.click();
+		expect(needEmailMessage.isDisplayed()).toEqual(false);
+		expect(invalidEmailMessage.isDisplayed()).toEqual(false);
+	})
 
 	it('Check if the user entered a valid birthdate (they are 13 years old) and the message does not appear', function() {
 		browser.get('http://localhost:8000');
@@ -77,6 +111,7 @@ describe('Social Ice sign up page', function() {
       var element2 = element(by.model('passwordConfirm')).sendKeys('b');
 
       expect( element(by.id('passwordError')).isDisplayed() ).toEqual(true);
+
 
     });
 

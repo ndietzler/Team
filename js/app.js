@@ -24,12 +24,13 @@ angular.module('SocialIce', [])
 		}
 
 		$scope.reset = function() {
-			$scope.email = "";
-			$scope.firstName = "";
-			$scope.lastName = "";
-			$scope.birthdate = "";
-			$scope.password = "";
-			$scope.passwordConfirm = "";
+			// $scope.email = "";
+			// $scope.firstName = "";
+			// $scope.lastName = "";
+			// $scope.birthdate = "";
+			// $scope.password = "";
+			// $scope.passwordConfirm = "";
+			window.location.reload(false);
 		}
 
 }]);
