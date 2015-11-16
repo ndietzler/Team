@@ -2,21 +2,21 @@
 
 describe('Social Ice sign up page', function() {
 
-	it('Check if the user entered text into birthdate function', function() {
+	it('Check if the user entered a valid birthdate and the message does not appear', function() {
 		browser.get('http://localhost:8000');
 
 		var text = element(by.model('birthdate'))
 		text.sendKeys("1")
 
-		expect(text != null).toEqual(true)
+		expect(birthDate.isDisplayed()).toEqual(true)
 
 	})
 
-	it('Check if birthdate entered is valid', function() {
-		browser.get('http://localhost:8000');
+	// it('Check if the user did not enter a valid birthdate and the appropriate message appears', function() {
+	// 	browser.get('http://localhost:8000');
 
-		
-	})
+
+	// })
 
 //     //this is a test
 //     it('should have the right title', function(){

@@ -46,7 +46,7 @@
 		  	<div class="form-group" ng-class="{'has-error' : !date()}">
 			    <label for="birthDateValidation">Birthdate</label>
 			    <input type="text" class="form-control" placeholder="Please enter your birthdate" ng-model="birthdate" ng-keyUp="date()" required>
-			    <p ng-show="birthdate != null && birthdate.length > 0 && !date()">Must be 13 years or older.</p>
+			    <p id="birthDate" ng-show="birthdate != null && birthdate.length > 0 && !date()">Must be 13 years or older.</p>
 		  	</div>
 
 		  	<div class="form-group" ng-class="{'has-error': password == null}">
