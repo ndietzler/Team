@@ -7,6 +7,8 @@ angular.module('SocialIce', [])
 
 		$scope.submitClick = false;
 
+		// Calculates date in miliseconds
+		// Determines whether user is age eligible
 		$scope.date = function() {
 			var d = Date.parse($scope.information.birthdate);
 			if (!isNaN(d)) {
@@ -19,6 +21,7 @@ angular.module('SocialIce', [])
 			}
 		}
 
+		// Check if the passwords match
 		$scope.checkMatch = function() {
 			if ($scope.information.password != null && $scope.information.passwordConfirm != null && $scope.information.password === $scope.information.passwordConfirm) {
 				return true;
@@ -27,6 +30,7 @@ angular.module('SocialIce', [])
 			}
 		}
 
+		// Resets the form
 		$scope.reset = function() {
 			$scope.information = {};
 			$scope.information.email = "";
